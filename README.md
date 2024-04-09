@@ -40,6 +40,8 @@ The convention for converting annual payments into monthly payments is that the 
 For example, for a 30-year loan with anuual rate of 4.8%, we use r = 4.8%/12 = 0.4% and n = 30\*12 = 360 to calculate x, where x becomes the monthly payment.
 It's not difficult to prove the monthly one, except for too much to write which may be easy to make mistakes.
 
+Note: our calculated interest will be rounded into 2 digits, but NOT round up into 2 digits.
+
 ### Building with Jupyter
 
 There would be multiple steps to do. First, I need to make the calculation work. This won't be difficult after proving the formula. After calculating the monthly payment, I would like to show the balance, interest payment, and balance deduction as well so my customer would have a better view of their payment schedule (better with dates). All of these can also be calculated iteratively. Then I need to setup a simple user interface which a user (like me, my colleagues, or even a random person) can input information and get the result using simple clicks.
