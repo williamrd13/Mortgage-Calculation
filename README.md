@@ -38,6 +38,7 @@ $$
 
 The convention for converting annual payments into monthly payments is that the interest rate for each period becomes 1/12, and it rolls over each month (n\*12) periods. 
 For example, for a 30-year loan with anuual rate of 4.8%, we use r = 4.8%/12 = 0.4% and n = 30\*12 = 360 to calculate x, where x becomes the monthly payment.
+It's not difficult to prove the monthly one, except for too much to write which may be easy to make mistakes.
 
 ### Building with Jupyter
 
@@ -58,7 +59,33 @@ What if a customer demands a wierd plan which the monthly payment increases by a
 
 ### New Formula
 
-[Formula proof]
+Again, for simplicity, I will prove the annual one instead of the monthly one.
+Same as before, x = constant monthly payment, r = annual interest rate, n = number of periods (years).
+Now we have i = the number of current period, and c = constant amount added to the monthly payment based on i.
+You may think c as c(i). To clarify this, if the base monthly payment is $5000 and added payment is $200 each period, the payment series will be {4800+200, 4800+400, 4800+600, ...}.
+Notice that we adjust the first payment to have one layer of added payment, but x is still a "constant" monthly payment! :)
+
+$$
+\begin{aligned}
+\{PV\ of\ added\ payment} &= \frac{c}{1+r}+\frac{2c}{(1+r)^2}+...+\frac{nc}{(1+r)^n}\\
+&=\[\frac{c}{1+r}+\frac{c}{(1+r)^2}+...+\frac{c}{(1+r)^n}\]+\[\frac{c}{(1+r)^2}+\frac{c}{(1+r)^3}+...+\frac{c}{(1+r)^n}\]+...+\frac{c}{(1+r)^n}\\
+&=\[\frac{c}{1+r}*\frac{1-(\frac{1}{1+r})^\{n}}{1-\frac{1}{1+r}}\]+\[...\]+...+\[...\]+\frac{c}{(1+r)^n}\\
+&=\frac{c}{r}\*\[\frac{(1+r)^n-1}{(1+r)^n}+\frac{(1+r)^{n-1}-1}{(1+r)^n}+...+\frac{(1+r)-1}{(1+r)^n}\]\\
+&=\frac{c}{r}\*\[1+\frac{1}{(1+r)}+...+\frac{1}{(1+r)^{n-1}}-\frac{n}{(1+r)^n}\]\\
+&=\frac{c}{r}\*\[\frac{1-(\frac{1}{1+r})^n}{1-\frac{1}{1+r}}-\frac{n}{(1+r)^n}\]\\
+&=\frac{c}{r}\*\[\frac{(1+r)^{n+1}-(1+r)}{r\*(1+r)^n}-\frac{rn}{r(1+r)^n}\]\\
+&=\frac{c}{{r^2}(1+r)^n}\*((1+r)^{n+1}-1-r-rn)\\
+\end{aligned}
+$$
+
+Then we add back the "constant" payment from the original formula.
+
+$$
+\begin{aligned}
+\{PV\ of\ all\ payment} &= \{PV\ of\ constant\ payment} + \{PV\ of\ added\ payment}\\
+&=(\frac{x}{r})\*(1-\frac{1}{(1+r)^n})+\frac{c}{{r^2}(1+r)^n}\*((1+r)^{n+1}-1-r-rn)\\
+\end{aligned}
+$$
 
 ### Building with Jupyter
 
