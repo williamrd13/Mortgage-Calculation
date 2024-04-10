@@ -29,7 +29,7 @@ $$
 \\
 \{PV\ of\ loan\ amount} &= \{loan\ amount} = {PV\ of\ all\ payments}\\
 &= \frac{x}{1+r}+\frac{x}{(1+r)^2}+...+\frac{x}{(1+r)^\{n}}\\
-&=(\frac{x}{1+r})+(\frac{x}{1+r})\*(\frac{1}{1+r})+...+(\frac{x}{1+r})\*(\frac{1}{(1+r)^\{(n-1)}})\\
+&=(\frac{x}{1+r})+...+(\frac{x}{1+r})\*(\frac{1}{(1+r)^\{(n-1)}})\\
 &=(\frac{x}{1+r})\*\frac{1-\frac{1}{(1+r)^n}}{1-\frac{1}{1+r}}\\
 &=(\frac{x}{1+r})\*(1-\frac{1}{(1+r)^n})\*\frac{1}{\frac{1+r-1}{1+r}}\\
 &=(\frac{x}{1+r})\*(1-\frac{1}{(1+r)^n})\*\frac{1+r}{r}\\
