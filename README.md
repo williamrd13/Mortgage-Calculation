@@ -26,6 +26,7 @@ $$
 \begin{aligned}
 \{FV\ of\ loan\ amount} = \{loan\ amount*(1+r)^\{n}}\\
 \{FV\ of\ all\ payments} = x*(1+r)^\{n}+...+x*(1+r)^2+x*(1+r)^1\\
+\\
 \{PV\ of\ loan\ amount} &= \{loan\ amount} = {PV\ of\ all\ payments}\\
 &= \frac{x}{1+r}+\frac{x}{(1+r)^2}+...+\frac{x}{(1+r)^\{n}}\\
 &=(\frac{x}{1+r})+(\frac{x}{1+r})\*(\frac{1}{1+r})+...+(\frac{x}{1+r})\*(\frac{1}{(1+r)^\{(n-1)}})\\
