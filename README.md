@@ -104,4 +104,10 @@ When the increment is negative, meaning each payment is lower than before, payme
 
 If an increment is needed, try to set it to be small numbers like 1,2,3,4,5 or decimals (could be negative). If the value is too large, the output won't make common sense.
 
+The following steps would export the ".py" file as a ".exe" file:
+- cmd (or terminal) pip install <packages> and pyinstaller (optional if already installed)
+- type "pyinstaller -D -w mortgage_calculator_2.py" (Option "-w" kills the black python window and "-D" builds ".exe" plus a package of files. If you want one single ".exe" file as output, replace "-D" using "-F" but it opens a bit slower)
+- pull out everything from the new "dist" folder (If "-F" is used instead of "-D", just the ".exe" file)
+- check and see if the output works on different computers (without installing packages)
+
 Report errors and bugs to williamrd13 or ncpareedwilliamren@gmail.com
