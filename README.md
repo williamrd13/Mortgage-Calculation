@@ -92,7 +92,7 @@ $$
 
 ### Building with Jupyter
 
-The important thing to change is the monthly payment because it is no longer a constant. As shown in the proof, it is the combination of a constant payment plus an increasing payment. To do this, we need to add the monthly payment into our iteration as well. THe added increment can be positive, negative, and zero. If it is zero, we still want the output to be the same as before.
+The important thing to change is the monthly payment because it is no longer a constant. As shown in the proof, it is the combination of a constant payment plus an increasing payment. To do this, we need to add the monthly payment into our iteration as well. The added increment can be positive, negative, and zero. If it is zero, we still want the output to be the same as before.
 
 There exists some unrealized "bugs" when I explore the added payment. There are obviously two cases which the added payment could be positive or negative.
 
